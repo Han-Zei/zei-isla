@@ -1,0 +1,349 @@
+:root {
+    --bg: #0f0f0f;
+    --bg-glass: rgba(255, 255, 255, 0.05);
+    --text: #f1f1f1;
+    --accent: #00bcd4;
+    --accent-light: #00ffff;
+    --font: 'Inter', sans-serif;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #222;
+    z-index: 1000;
+  }
+  
+  header h1 {
+    color: var(--accent);
+    font-size: 1.5rem;
+  }
+  
+  nav a {
+    color: var(--text);
+    margin-left: 1.5rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  nav a:hover {
+    color: var(--accent-light);
+  }
+  
+  main {
+    padding-top: 100px;
+  }
+  
+  section {
+    padding: 4rem 2rem;
+    max-width: 960px;
+    margin: auto;
+    transition: all 0.3s ease;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+  }
+  
+  .project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+  
+  .project-card {
+    background: var(--bg-glass);
+    border: 1px solid #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  input, textarea {
+    background: #1a1a1a;
+    color: var(--text);
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+  
+  button {
+    background: var(--accent);
+    color: #000;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background: var(--accent-light);
+  }
+  
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+    color: #aaa;
+    background: #1a1a1a;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    nav a {
+      margin-left: 1rem;
+      font-size: 0.9rem;
+    }
+  
+    .project-list {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  #vanta-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    top: 0;
+    left: 0;
+  }
+  
+  .resume-card {
+    background: #1a1a1a;
+    padding: 2rem;
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    margin-top: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  
+  .resume-actions {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .btn, .btn-outline {
+    padding: 0.75rem 1.25rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.2s ease;
+  }
+  
+  .btn {
+    background: var(--accent);
+    color: #000;
+  }
+  
+  .btn:hover {
+    background: var(--accent-light);
+  }
+  
+  .btn-outline {
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    background: transparent;
+  }
+  
+  .btn-outline:hover {
+    background: var(--accent);
+    color: #000;
+  }
+  
+  /* Modal Background */
+.modal {
+    display: none; /* hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.85);
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    margin: 5vh auto;
+    width: 90%;
+    max-width: 900px;
+    height: 80vh;
+    background: #121212;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 188, 212, 0.6);
+    overflow: hidden;
+  }
+  
+  /* Close Button */
+  .close-btn {
+    color: #00bcd4;
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    font-size: 2.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  /* PDF iframe */
+  .modal-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0 0 12px 12px;
+  }
+
+  #socials {
+    text-align: center;
+    margin-top: 4rem;
+  }
+  
+  #socials h2 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+  
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+  
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    padding: 0.6rem 1rem;
+    background-color: #1f1f1f;
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    color: var(--accent);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .social-link i {
+    font-size: 1.5rem;
+  }
+  
+  .social-link:hover {
+    background-color: var(--accent);
+    color: #121212;
+  }
+
+  #socials {
+    text-align: center;
+    margin-top: 4rem;
+  }
+  
+  #socials h2 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .social-link {
+    font-size: 1.5rem;
+    color: var(--accent);
+    background: #1a1a1a;
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    padding: 0.75rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .social-link:hover {
+    background-color: var(--accent);
+    color: #121212;
+    transform: scale(1.05);
+  }  
+  
+  .social-link i {
+    pointer-events: none;
+  }
+  
+  /* Optional: Responsive */
+  @media (max-width: 600px) {
+    .social-links {
+      gap: 1rem;
+    }
+  
+    .social-link {
+      font-size: 1.5rem;
+      padding: 0.6rem;
+    }
+  }
+  
